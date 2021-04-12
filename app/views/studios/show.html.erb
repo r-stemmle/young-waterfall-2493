@@ -4,3 +4,11 @@
   <h2> <%= @studio.name %> </h2>
   <h2> <%= @studio.location %> </h2>
 </header>
+
+<div class="">
+  <ul>
+    <% @studio.movies.each do |movie| %>
+    <li> <%= movie.title %> </li>
+    <% end %>
+  </ul>
+</div>
