@@ -27,11 +27,30 @@ RSpec.describe "Studio Show Page" do
       visit studio_path(@mgm)
 
       within ".studio-actors" do
-        expect(page).to have_content(@old.name)
-        expect(page).to have_content(@lady.name)
         expect(page).to have_content(@tom.name)
-        save_and_open_page
+        expect(page).to have_content(@lady.name)
       end
     end
+
+    it "And I see the list of actors is ordered from oldest actor to youngest" do
+      visit studio_path(@mgm)
+
+      within ".studio-actors" do
+        expect(page).to have_content(@tom.name)
+        expect(page).to have_content(@lady.name)
+        expect(@lady.name).to appear_before(@tom.name)
+      end
+    end
+
+    it "And I see that the list of actors includes actors that are currently_working" do
+      visit studio_path(@mgm)
+
+      within ".studio-actors" do
+        expect(page).to have_content(@tom.name)
+        expect(page).to have_content(@lady.name)
+        expect(page).to_not have_content(@old.name)
+      end
+    end
+
   end
 end

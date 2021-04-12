@@ -1,0 +1,10 @@
+<%= form_with @movie.actors.new do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :age %>
+  <%= form.text_field :age %><br>
+
+  <%= form.label :currently_working %>
+  <%= form.check_box :age %><br>
+<% end %>

@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :studios, only: [:show]
 
+  resources :actors, only: [:index, :show]
+
   resources :movies, only: [:show]
 end

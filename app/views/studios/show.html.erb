@@ -15,7 +15,7 @@
 
 <div class="studio-actors">
   <ul>
-    <% @studio.actors.each do |actor| %>
+    <% @active_studio_actors.each do |actor| %>
     <li> <%= actor.name %>, <%= actor.age %>, <%= actor.currently_working %> </li>
     <% end %>
   </ul>

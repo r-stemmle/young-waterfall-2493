@@ -13,4 +13,19 @@
       <li> <%= actor.name %> </li>
       <% end %>
     </ul>
+
+    <div class="add-actor">
+      <h3>Add Actor to this Movie:</h3>
+      <%= form_with url: movie_path(@movie), method: :get do |form| %>
+        <%= form.label :query, "Name:" %>
+        <%= form.text_field :query %>
+        <%= form.submit "Search" %>
+      <% end %>
+    </div>
+
+    <p>
+      <% if @actor %>
+        <%= @actor.name %>
+      <% end %>
+    </p>
   </div>
