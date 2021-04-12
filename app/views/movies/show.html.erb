@@ -1,0 +1,16 @@
+<h1>Movies Show Page:</h1>
+
+
+  <h2> <%= @movie.title %> </h2>
+  <ul>
+    <li><%= @movie.creation_year %></li>
+    <li><%= @movie.genre %></li>
+  </ul>
+
+  <div class="movies-actors">
+    <ul>
+      <% @movie.actors.each do |actor| %>
+      <li> <%= actor.name %> </li>
+      <% end %>
+    </ul>
+  </div>

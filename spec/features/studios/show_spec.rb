@@ -30,6 +30,7 @@ RSpec.describe "Studio Show Page" do
         expect(page).to have_content(@old.name)
         expect(page).to have_content(@lady.name)
         expect(page).to have_content(@tom.name)
+        save_and_open_page
       end
     end
   end
